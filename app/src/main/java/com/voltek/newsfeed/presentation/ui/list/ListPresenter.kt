@@ -24,6 +24,9 @@ class ListPresenter(
 
     init {
         bind(arrayOf(articles, newsSourcesChanges))
+    }
+
+    override fun onFirstViewAttach() {
         listenForChanges()
         loadArticles()
     }
