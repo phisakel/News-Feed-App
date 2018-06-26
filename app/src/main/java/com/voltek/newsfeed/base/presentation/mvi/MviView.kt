@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.base.presentation
+package com.voltek.newsfeed.base.presentation.mvi
 
 import com.arellomobile.mvp.MvpView
 import io.reactivex.Observable

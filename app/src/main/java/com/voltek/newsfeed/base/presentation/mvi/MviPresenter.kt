@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.base.presentation
+package com.voltek.newsfeed.base.presentation.mvi
 
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
@@ -14,7 +14,7 @@ abstract class MviPresenter<ViewState : MviViewState>(
     private val stateSubject = BehaviorSubject.createDefault<ViewState>(initialState)
     private val stateAndIntentsDisposables = CompositeDisposable()
 
-    protected val state: ViewState
+    val state: ViewState
         get() = stateSubject.value ?: initialState
 
     fun attachView(view: MviView<ViewState>) {
@@ -37,15 +37,23 @@ abstract class MviPresenter<ViewState : MviViewState>(
         this.view = null
     }
 
-    open fun onFirstViewAttach() {}
+    fun destroy() {
+        onDestroy()
+    }
 
-    open fun onViewAttach() {}
+    private fun onFirstViewAttach() {}
 
-    open fun onViewDetach() {}
+    private fun onViewAttach() {}
 
-    open fun onDestroy() {}
+    private fun onViewDetach() {}
+
+    private fun onDestroy() {}
 
     open fun handleIntent(intent: MviIntent) {}
+
+    protected fun update(state: ViewState) {
+        stateSubject.onNext(state)
+    }
 
     private fun subscribeViewForStateUpdates(render: (ViewState) -> Unit) {
         stateAndIntentsDisposables.add(stateSubject.subscribe { render(it) })
