@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.dagger
+package com.voltek.newsfeed.dagger.legacy
 
 import android.content.Context
 import com.voltek.newsfeed.BuildConfig

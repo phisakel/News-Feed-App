@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.dagger
+package com.voltek.newsfeed.dagger.legacy
 
 import com.voltek.newsfeed.data.network.NewsApi
 import com.voltek.newsfeed.data.platform.ResourcesManager

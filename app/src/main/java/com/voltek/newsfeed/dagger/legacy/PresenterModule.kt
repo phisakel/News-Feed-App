@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.dagger
+package com.voltek.newsfeed.dagger.legacy
 
 import com.voltek.newsfeed.domain.usecase.articles.GetArticlesUseCase
 import com.voltek.newsfeed.domain.usecase.newssources.EnableNewsSourceUseCase

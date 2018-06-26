@@ -1,12 +1,13 @@
-package com.voltek.newsfeed.features.entrypoint
+package com.voltek.newsfeed.features.entrypoint.presentation
 
 import com.voltek.newsfeed.Logger
 import com.voltek.newsfeed.base.navigation.Router
 import com.voltek.newsfeed.base.navigation.commands.Go
 import com.voltek.newsfeed.base.navigation.commands.Replace
-import com.voltek.newsfeed.base.presentation.RxSchedulers
-import com.voltek.newsfeed.base.presentation.RxStreamsHolder
+import com.voltek.newsfeed.base.reactive.RxSchedulers
+import com.voltek.newsfeed.base.reactive.RxStreamsHolder
 import com.voltek.newsfeed.common.navigation.Screen
+import com.voltek.newsfeed.features.entrypoint.domain.EntryPointInteractor
 import io.reactivex.disposables.CompositeDisposable
 
 class EntryPointWizard(
@@ -19,11 +20,7 @@ class EntryPointWizard(
 
     private var hasEnabledNewsSources = false
 
-    fun start() {
-        nextStep()
-    }
-
-    private fun nextStep() = when {
+    fun nextStep() = when {
         !hasEnabledNewsSources -> checkEnabledNewsSources()
         else -> finish()
     }

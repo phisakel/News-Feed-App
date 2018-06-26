@@ -1,6 +1,7 @@
 package com.voltek.newsfeed.dagger
 
-import com.voltek.newsfeed.features.entrypoint.EntryPointActivity
+import com.voltek.newsfeed.dagger.legacy.*
+import com.voltek.newsfeed.features.entrypoint.presentation.EntryPointActivity
 import com.voltek.newsfeed.presentation.ui.details.DetailsFragment
 import com.voltek.newsfeed.presentation.ui.list.ListFragment
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesFragment
@@ -20,7 +21,10 @@ import javax.inject.Singleton
     StorageModule::class,
     UseCaseModule::class,
     AnalyticsModule::class,
-    NavigationModule::class
+    NavigationModule::class,
+    RxModule::class,
+    WizardModule::class,
+    InteractorModule::class
 ])
 interface AppComponent {
 

@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.base.presentation
+package com.voltek.newsfeed.base.reactive
 
 import io.reactivex.Scheduler
 import io.reactivex.CompletableTransformer

@@ -3,6 +3,10 @@ package com.voltek.newsfeed
 import android.app.Application
 import com.orhanobut.hawk.Hawk
 import com.voltek.newsfeed.dagger.*
+import com.voltek.newsfeed.dagger.legacy.AppModule
+import com.voltek.newsfeed.dagger.legacy.NetworkModule
+import com.voltek.newsfeed.dagger.legacy.RouterModule
+import com.voltek.newsfeed.dagger.legacy.UseCaseModule
 import com.voltek.newsfeed.data.network.BASE_URL
 import com.voltek.newsfeed.presentation.navigation.RouterHolderOld
 import com.voltek.newsfeed.presentation.navigation.proxy.NavigatorBinderOld

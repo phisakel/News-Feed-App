@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.features.entrypoint
+package com.voltek.newsfeed.features.entrypoint.presentation
 
 import android.os.Bundle
 import com.voltek.newsfeed.App
@@ -20,8 +20,15 @@ class EntryPointActivity : BaseActivity() {
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
 
+    @Inject
+    lateinit var entryPointWizard: EntryPointWizard
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navigator = EntryPointNavigator(this)
+
+        if (savedInstanceState == null) {
+            entryPointWizard.nextStep()
+        }
     }
 }

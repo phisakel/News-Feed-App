@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.dagger
+package com.voltek.newsfeed.dagger.legacy
 
 import com.voltek.newsfeed.presentation.navigation.RouterHolderOld
 import com.voltek.newsfeed.presentation.navigation.proxy.RouterOld

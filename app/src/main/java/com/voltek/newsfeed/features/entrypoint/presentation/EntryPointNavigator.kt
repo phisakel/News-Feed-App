@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.features.entrypoint
+package com.voltek.newsfeed.features.entrypoint.presentation
 
 import android.app.Activity
 import com.voltek.newsfeed.base.navigation.Command

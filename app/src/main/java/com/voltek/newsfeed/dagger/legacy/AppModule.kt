@@ -1,5 +1,6 @@
-package com.voltek.newsfeed.dagger
+package com.voltek.newsfeed.dagger.legacy
 
+import android.app.Application
 import android.content.Context
 import com.voltek.newsfeed.App
 import dagger.Module
@@ -15,5 +16,5 @@ class AppModule(val app: App) {
 
     @Provides
     @Singleton
-    fun provideApplication(): App = app
+    fun provideApplication(): Application = app
 }
