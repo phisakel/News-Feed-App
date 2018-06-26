@@ -1,5 +1,6 @@
 package com.voltek.newsfeed.common.presentation
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
