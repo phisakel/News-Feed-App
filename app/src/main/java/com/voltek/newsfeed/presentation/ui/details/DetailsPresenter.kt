@@ -8,10 +8,10 @@ import com.voltek.newsfeed.presentation.navigation.command.CommandBack
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenNewsSourcesScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenWebsite
 import com.voltek.newsfeed.presentation.navigation.command.CommandShareArticle
-import com.voltek.newsfeed.presentation.navigation.proxy.Router
+import com.voltek.newsfeed.presentation.navigation.proxy.RouterOld
 
 @InjectViewState
-class DetailsPresenter(private val router: Router) : BasePresenter<DetailsView>() {
+class DetailsPresenter(private val router: RouterOld) : BasePresenter<DetailsView>() {
 
     private val model: DetailsModel = DetailsModel { viewState.render(it as DetailsModel) }
 

@@ -6,9 +6,9 @@ package com.voltek.newsfeed.presentation.navigation.proxy
  * When it can no longer provide navigation, calls removeNavigator.
  * (onPause for activity class)
  */
-interface NavigatorBinder {
+interface NavigatorBinderOld {
 
-    fun setNavigator(navigator: Navigator)
+    fun setNavigator(navigator: NavigatorOld)
 
     fun removeNavigator()
 }

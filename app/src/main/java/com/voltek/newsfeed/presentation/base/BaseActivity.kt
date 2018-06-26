@@ -9,13 +9,13 @@ import com.voltek.newsfeed.utils.SubscriptionsHolder
 import com.voltek.newsfeed.App
 import com.voltek.newsfeed.R
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenWebsite
-import com.voltek.newsfeed.presentation.navigation.proxy.Navigator
+import com.voltek.newsfeed.presentation.navigation.proxy.NavigatorOld
 import io.reactivex.disposables.CompositeDisposable
 import android.widget.Toast
 import com.voltek.newsfeed.presentation.navigation.command.CommandShareArticle
 
 abstract class BaseActivity : MvpAppCompatActivity(),
-        Navigator,
+        NavigatorOld,
         SubscriptionsHolder {
 
     // Holds all disposables with input events subscriptions

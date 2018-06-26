@@ -3,10 +3,10 @@ package com.voltek.newsfeed.presentation.navigation
 import com.voltek.newsfeed.domain.exception.NoConnectionException
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 import com.voltek.newsfeed.presentation.navigation.command.*
-import com.voltek.newsfeed.presentation.navigation.proxy.Command
-import com.voltek.newsfeed.presentation.navigation.proxy.Navigator
-import com.voltek.newsfeed.presentation.navigation.proxy.NavigatorBinder
-import com.voltek.newsfeed.presentation.navigation.proxy.Router
+import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
+import com.voltek.newsfeed.presentation.navigation.proxy.NavigatorOld
+import com.voltek.newsfeed.presentation.navigation.proxy.NavigatorBinderOld
+import com.voltek.newsfeed.presentation.navigation.proxy.RouterOld
 import org.junit.Before
 import org.junit.Test
 import junit.framework.Assert.assertEquals
@@ -14,25 +14,25 @@ import junit.framework.Assert.assertTrue
 
 class RouterHolderTest {
 
-    private lateinit var routerHolder: RouterHolder
+    private lateinit var routerHolder: RouterHolderOld
 
-    private lateinit var router: Router
-    private lateinit var navigatorBinder: NavigatorBinder
+    private lateinit var router: RouterOld
+    private lateinit var navigatorBinder: NavigatorBinderOld
 
-    private val trueNavigator: Navigator = object : Navigator {
-        override fun executeCommand(command: Command) = when (command) {
+    private val trueNavigator: NavigatorOld = object : NavigatorOld {
+        override fun executeCommand(command: CommandOld) = when (command) {
             is CommandNavigatorAttached -> false
             else -> true
         }
     }
 
-    private val falseNavigator: Navigator = object : Navigator {
-        override fun executeCommand(command: Command) = false
+    private val falseNavigator: NavigatorOld = object : NavigatorOld {
+        override fun executeCommand(command: CommandOld) = false
     }
 
     @Before
     fun prepare() {
-        routerHolder = RouterHolder()
+        routerHolder = RouterHolderOld()
         this.router = routerHolder
         this.navigatorBinder = routerHolder
     }

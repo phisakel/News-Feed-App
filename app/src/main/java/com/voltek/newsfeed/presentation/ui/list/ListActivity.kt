@@ -5,7 +5,7 @@ import com.voltek.newsfeed.R
 import com.voltek.newsfeed.presentation.base.BaseActivity
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 import com.voltek.newsfeed.presentation.navigation.command.*
-import com.voltek.newsfeed.presentation.navigation.proxy.Command
+import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
 import com.voltek.newsfeed.presentation.ui.details.DetailsFragment
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesActivity
 import kotlinx.android.synthetic.main.activity_list.*
@@ -38,7 +38,7 @@ class ListActivity : BaseActivity() {
         title = getString(R.string.title_list)
     }
 
-    override fun executeCommand(command: Command): Boolean = when (command) {
+    override fun executeCommand(command: CommandOld): Boolean = when (command) {
         is CommandOpenNewsSourcesScreen -> openNewsSources()
         is CommandOpenArticleDetailsScreen -> openDetails(command.article)
         is CommandShareArticle -> shareArticle(command)

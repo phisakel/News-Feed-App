@@ -7,17 +7,17 @@ import java.util.concurrent.CopyOnWriteArrayList
 
 /**
  * Manages app navigation, lifecycle tied to app process. Can hold only one navigator at a time.
- * When Router receives command, it will be executed by current navigator or added to queue,
+ * When RouterOld receives command, it will be executed by current navigator or added to queue,
  * if there is no navigator attached or current navigator can not execute it.
  * When new navigator get attached, holder will try to execute queued commands.
  */
-class RouterHolder : Router, NavigatorBinder {
+class RouterHolderOld : RouterOld, NavigatorBinderOld {
 
-    private val commandsFeed: PublishSubject<Command> = PublishSubject.create()
+    private val commandsFeed: PublishSubject<CommandOld> = PublishSubject.create()
 
-    private var navigator: Navigator? = null
+    private var navigator: NavigatorOld? = null
 
-    val commandsQueue: CopyOnWriteArrayList<Command> = CopyOnWriteArrayList()
+    val commandsQueue: CopyOnWriteArrayList<CommandOld> = CopyOnWriteArrayList()
 
     init {
         subscribeToCommandsFeed()
@@ -30,13 +30,13 @@ class RouterHolder : Router, NavigatorBinder {
                 .subscribe { addToQueue(it) }
     }
 
-    // Router
-    override fun execute(command: Command) {
+    // RouterOld
+    override fun execute(command: CommandOld) {
         commandsFeed.onNext(command)
     }
 
-    // NavigatorBinder
-    override fun setNavigator(navigator: Navigator) {
+    // NavigatorBinderOld
+    override fun setNavigator(navigator: NavigatorOld) {
         this.navigator = navigator
         commandsFeed.onNext(CommandNavigatorAttached())
     }
@@ -51,13 +51,13 @@ class RouterHolder : Router, NavigatorBinder {
      * @return If navigator = null returns false, if command executed - returns true,
      *         if command cannot be executed - false.
      */
-    private fun runCommand(command: Command): Boolean = navigator?.executeCommand(command) ?: false
+    private fun runCommand(command: CommandOld): Boolean = navigator?.executeCommand(command) ?: false
 
     /**
      * @return true, if new navigator has been attached (tries to execute all commands in queue)
      *         else returns false. (Without queue execution)
      */
-    private fun runQueue(command: Command) =
+    private fun runQueue(command: CommandOld) =
             if (command is CommandNavigatorAttached) {
                 commandsQueue
                         .filter { runCommand(it) }
@@ -71,7 +71,7 @@ class RouterHolder : Router, NavigatorBinder {
     /**
      * @return true, if command was added to queue, else false.
      */
-    private fun addToQueue(command: Command) =
+    private fun addToQueue(command: CommandOld) =
             if (command.addToQueue) {
                 if (commandsQueue.isNotEmpty())
                     command.id = commandsQueue[commandsQueue.lastIndex].id + 1
@@ -83,5 +83,5 @@ class RouterHolder : Router, NavigatorBinder {
     /**
      * @return true, if command removed successfully, else false
      */
-    private fun removeFromQueue(command: Command) = commandsQueue.remove(command)
+    private fun removeFromQueue(command: CommandOld) = commandsQueue.remove(command)
 }

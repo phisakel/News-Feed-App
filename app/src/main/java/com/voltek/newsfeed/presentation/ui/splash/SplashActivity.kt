@@ -6,7 +6,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.voltek.newsfeed.App
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenArticlesListScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenNewsSourcesScreen
-import com.voltek.newsfeed.presentation.navigation.proxy.Command
+import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
 import com.voltek.newsfeed.presentation.base.BaseActivity
 import com.voltek.newsfeed.presentation.ui.list.ListActivity
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesActivity
@@ -26,7 +26,7 @@ class SplashActivity : BaseActivity(),
     @ProvidePresenter
     fun providePresenter() = presenter
 
-    override fun executeCommand(command: Command): Boolean = when (command) {
+    override fun executeCommand(command: CommandOld): Boolean = when (command) {
         is CommandOpenArticlesListScreen -> {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)

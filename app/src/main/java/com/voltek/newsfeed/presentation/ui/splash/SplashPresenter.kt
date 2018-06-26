@@ -10,13 +10,13 @@ import com.voltek.newsfeed.presentation.entity.SourceUI
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenArticlesListScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenNewsSourcesScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandSystemMessage
-import com.voltek.newsfeed.presentation.navigation.proxy.Router
+import com.voltek.newsfeed.presentation.navigation.proxy.RouterOld
 import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
 
 @InjectViewState
 class SplashPresenter(
-        private val router: Router,
+        private val router: RouterOld,
         private val newsSources: NewsSourcesUseCase
 ) : BasePresenter<SplashView>() {
 

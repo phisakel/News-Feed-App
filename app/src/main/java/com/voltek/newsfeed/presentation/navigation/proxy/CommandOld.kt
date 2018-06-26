@@ -6,7 +6,7 @@ package com.voltek.newsfeed.presentation.navigation.proxy
  * @id command unique identifier, assigned only if command get queued.
  * @addToQueue should command be added to queue, if it cannot be executed instantly.
  */
-abstract class Command {
+abstract class CommandOld {
 
     var id: Int = 0
     var addToQueue: Boolean = true
