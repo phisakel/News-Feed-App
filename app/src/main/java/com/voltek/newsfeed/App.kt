@@ -22,6 +22,8 @@ class App : Application() {
 
         // DI
         lateinit var appComponent: AppComponent
+
+        lateinit var component: AppComponent
     }
 
     override fun onCreate() {
@@ -42,6 +44,7 @@ class App : Application() {
                 .networkModule(networkModule)
                 .appModule(appModule)
                 .build()
+        component = appComponent
 
         Realm.init(this)
         Hawk.init(this).build()

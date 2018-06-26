@@ -14,7 +14,7 @@ abstract class MviPresenter<ViewState : MviViewState>(
     private val stateSubject = BehaviorSubject.createDefault<ViewState>(initialState)
     private val stateAndIntentsDisposables = CompositeDisposable()
 
-    val state: ViewState
+    protected val state: ViewState
         get() = stateSubject.value ?: initialState
 
     fun attachView(view: MviView<ViewState>) {
@@ -59,7 +59,7 @@ abstract class MviPresenter<ViewState : MviViewState>(
         stateAndIntentsDisposables.add(stateSubject.subscribe { render(it) })
     }
 
-    protected fun subscribeForViewIntents(intents: Observable<MviIntent>) {
+    private fun subscribeForViewIntents(intents: Observable<MviIntent>) {
         stateAndIntentsDisposables.add(intents.subscribe(::handleIntent))
     }
 }

@@ -29,4 +29,8 @@ abstract class BaseActivity : AppCompatActivity(), LayoutController, Injectable 
         getNavigationHolder().removeNavigator()
         super.onPause()
     }
+
+    override fun onBackPressed() {
+        getNavigator().onBackPressed()
+    }
 }
