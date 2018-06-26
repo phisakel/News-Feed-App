@@ -2,6 +2,7 @@ package com.voltek.newsfeed.dagger
 
 import com.voltek.newsfeed.dagger.legacy.*
 import com.voltek.newsfeed.features.entrypoint.presentation.EntryPointActivity
+import com.voltek.newsfeed.features.newssource.presentation.NewsSourceFragment
 import com.voltek.newsfeed.presentation.ui.details.DetailsFragment
 import com.voltek.newsfeed.presentation.ui.list.ListFragment
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesFragment
@@ -37,4 +38,5 @@ interface AppComponent {
     /* ------------------------------------------------- */
 
     fun inject(entryPointActivity: EntryPointActivity)
+    fun inject(newsSourceFragment: NewsSourceFragment)
 }
