@@ -1,10 +1,10 @@
 package com.voltek.newsfeed.presentation.ui.newssources
 
 import com.voltek.newsfeed.R
-import com.voltek.newsfeed.presentation.base.BaseModel
+import com.voltek.newsfeed.presentation.base.BaseModelOld
 import com.voltek.newsfeed.presentation.entity.SourceUI
 
-class NewsSourcesModel(subscriber: (BaseModel) -> Unit) : BaseModel(subscriber) {
+class NewsSourcesModel(subscriber: (BaseModelOld) -> Unit) : BaseModelOld(subscriber) {
 
     var categoryId: Int = R.id.action_all
 

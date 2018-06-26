@@ -14,7 +14,7 @@ import io.reactivex.disposables.CompositeDisposable
 import android.widget.Toast
 import com.voltek.newsfeed.presentation.navigation.command.CommandShareArticle
 
-abstract class BaseActivity : MvpAppCompatActivity(),
+abstract class BaseActivityOld : MvpAppCompatActivity(),
         NavigatorOld,
         SubscriptionsHolder {
 
@@ -73,7 +73,7 @@ abstract class BaseActivity : MvpAppCompatActivity(),
     }
 
     protected fun replaceFragment(
-            fragment: BaseFragment,
+            fragment: BaseFragmentOld,
             @IdRes id: Int,
             tag: String,
             addToBackStack: Boolean = false

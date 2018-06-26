@@ -5,7 +5,7 @@ import com.arellomobile.mvp.MvpAppCompatFragment
 import com.voltek.newsfeed.utils.SubscriptionsHolder
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BaseFragment : MvpAppCompatFragment(),
+abstract class BaseFragmentOld : MvpAppCompatFragment(),
         SubscriptionsHolder {
 
     // Holds all disposables with input events subscriptions

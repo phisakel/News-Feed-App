@@ -7,12 +7,12 @@ import com.voltek.newsfeed.App
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenArticlesListScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenNewsSourcesScreen
 import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
-import com.voltek.newsfeed.presentation.base.BaseActivity
+import com.voltek.newsfeed.presentation.base.BaseActivityOld
 import com.voltek.newsfeed.presentation.ui.list.ListActivity
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesActivity
 import javax.inject.Inject
 
-class SplashActivity : BaseActivity(),
+class SplashActivity : BaseActivityOld(),
         SplashView {
 
     init {

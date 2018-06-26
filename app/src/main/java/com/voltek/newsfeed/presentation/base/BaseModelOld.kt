@@ -5,12 +5,12 @@ package com.voltek.newsfeed.presentation.base
  *
  * @param subscriber function, that will be called when model updates
  */
-abstract class BaseModel(private val subscriber: (BaseModel) -> Unit) {
+abstract class BaseModelOld(private val subscriber: (BaseModelOld) -> Unit) {
 
     /**
      * Call this method to render new model state
      */
     fun update() {
-        subscriber.invoke(this@BaseModel)
+        subscriber.invoke(this@BaseModelOld)
     }
 }

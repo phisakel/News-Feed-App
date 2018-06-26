@@ -11,7 +11,7 @@ import com.jakewharton.rxbinding2.support.v4.widget.RxSwipeRefreshLayout
 import com.jakewharton.rxbinding2.support.v7.widget.RxToolbar
 import com.voltek.newsfeed.App
 import com.voltek.newsfeed.R
-import com.voltek.newsfeed.presentation.base.BaseFragment
+import com.voltek.newsfeed.presentation.base.BaseFragmentOld
 import com.voltek.newsfeed.presentation.base.Event
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
-class ListFragment : BaseFragment(),
+class ListFragment : BaseFragmentOld(),
         ListView {
 
     companion object {

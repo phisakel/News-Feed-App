@@ -4,7 +4,7 @@ import com.arellomobile.mvp.InjectViewState
 import com.voltek.newsfeed.domain.usecase.Parameter
 import com.voltek.newsfeed.domain.usecase.newssources.EnableNewsSourceUseCase
 import com.voltek.newsfeed.domain.usecase.newssources.NewsSourcesUseCase
-import com.voltek.newsfeed.presentation.base.BasePresenter
+import com.voltek.newsfeed.presentation.base.BasePresenterOld
 import com.voltek.newsfeed.presentation.base.Event
 import com.voltek.newsfeed.presentation.entity.SourceUI
 import io.reactivex.functions.Action
@@ -14,7 +14,7 @@ import io.reactivex.functions.Consumer
 class NewsSourcesPresenter(
         private val newsSources: NewsSourcesUseCase,
         private val newsSourceEnable: EnableNewsSourceUseCase
-) : BasePresenter<NewsSourcesView>() {
+) : BasePresenterOld<NewsSourcesView>() {
 
     private val model: NewsSourcesModel =
             NewsSourcesModel { viewState.render(it as NewsSourcesModel) }

@@ -6,10 +6,10 @@ import com.voltek.newsfeed.R
 import com.voltek.newsfeed.domain.exception.NoNewsSourcesSelectedException
 import com.voltek.newsfeed.presentation.navigation.command.CommandSystemMessage
 import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
-import com.voltek.newsfeed.presentation.base.BaseActivity
+import com.voltek.newsfeed.presentation.base.BaseActivityOld
 import kotlinx.android.synthetic.main.activity_generic.*
 
-class NewsSourcesActivity : BaseActivity() {
+class NewsSourcesActivity : BaseActivityOld() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

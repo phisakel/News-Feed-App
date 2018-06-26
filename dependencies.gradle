@@ -18,6 +18,7 @@ ext.versions = [
         timber                  : '4.7.0',
         moxy                    : '1.5.3',
         recyclerviewAnimators   : '2.3.0',
+        adapterDelegates        : '3.0.1',
 
         junit                   : '4.12',
         mockwebserver           : '3.10.0',

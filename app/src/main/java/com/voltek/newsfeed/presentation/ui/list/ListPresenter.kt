@@ -4,7 +4,7 @@ import com.arellomobile.mvp.InjectViewState
 import com.voltek.newsfeed.domain.usecase.Parameter
 import com.voltek.newsfeed.domain.usecase.articles.GetArticlesUseCase
 import com.voltek.newsfeed.domain.usecase.newssources.NewsSourcesUpdatesUseCase
-import com.voltek.newsfeed.presentation.base.BasePresenter
+import com.voltek.newsfeed.presentation.base.BasePresenterOld
 import com.voltek.newsfeed.presentation.base.Event
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenArticleDetailsScreen
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenNewsSourcesScreen
@@ -17,7 +17,7 @@ class ListPresenter(
         private val router: RouterOld,
         private val articles: GetArticlesUseCase,
         private val newsSourcesChanges: NewsSourcesUpdatesUseCase
-) : BasePresenter<ListView>() {
+) : BasePresenterOld<ListView>() {
 
     // Holds current model through full presenter lifecycle
     private val model: ListModel = ListModel { viewState.render(it as ListModel) }

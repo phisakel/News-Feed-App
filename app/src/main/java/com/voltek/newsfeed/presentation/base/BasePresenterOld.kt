@@ -3,7 +3,7 @@ package com.voltek.newsfeed.presentation.base
 import com.arellomobile.mvp.MvpPresenter
 import com.voltek.newsfeed.domain.usecase.BaseUseCase
 
-abstract class BasePresenter<View : BaseView> : MvpPresenter<View>() {
+abstract class BasePresenterOld<View : BaseViewOld> : MvpPresenter<View>() {
 
     private val useCases = ArrayList<BaseUseCase<*, *>>()
 

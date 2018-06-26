@@ -121,13 +121,14 @@ dependencies {
     // Logging
     implementation "com.jakewharton.timber:timber:$versions.timber"
 
-    // MVP
+    // Architecture libs
     implementation "com.arello-mobile:moxy:$versions.moxy"
     implementation "com.arello-mobile:moxy-app-compat:$versions.moxy"
     kapt "com.arello-mobile:moxy-compiler:$versions.moxy"
 
-    // Animations
+    // Recycler View related libs
     implementation "jp.wasabeef:recyclerview-animators:$versions.recyclerviewAnimators"
+    implementation "com.hannesdorfmann:adapterdelegates3:$versions.adapterDelegates"
 
     // Unit tests
     testImplementation "junit:junit:$versions.junit"

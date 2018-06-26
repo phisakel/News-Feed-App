@@ -1,7 +1,7 @@
 package com.voltek.newsfeed.presentation.ui.details
 
 import com.arellomobile.mvp.InjectViewState
-import com.voltek.newsfeed.presentation.base.BasePresenter
+import com.voltek.newsfeed.presentation.base.BasePresenterOld
 import com.voltek.newsfeed.presentation.base.Event
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 import com.voltek.newsfeed.presentation.navigation.command.CommandBack
@@ -11,7 +11,7 @@ import com.voltek.newsfeed.presentation.navigation.command.CommandShareArticle
 import com.voltek.newsfeed.presentation.navigation.proxy.RouterOld
 
 @InjectViewState
-class DetailsPresenter(private val router: RouterOld) : BasePresenter<DetailsView>() {
+class DetailsPresenter(private val router: RouterOld) : BasePresenterOld<DetailsView>() {
 
     private val model: DetailsModel = DetailsModel { viewState.render(it as DetailsModel) }
 

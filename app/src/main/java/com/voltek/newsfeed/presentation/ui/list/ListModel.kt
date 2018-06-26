@@ -1,9 +1,9 @@
 package com.voltek.newsfeed.presentation.ui.list
 
-import com.voltek.newsfeed.presentation.base.BaseModel
+import com.voltek.newsfeed.presentation.base.BaseModelOld
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 
-class ListModel(subscriber: (BaseModel) -> Unit) : BaseModel(subscriber) {
+class ListModel(subscriber: (BaseModelOld) -> Unit) : BaseModelOld(subscriber) {
 
     var scrollToTop: Boolean = false
 

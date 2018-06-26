@@ -1,8 +1,8 @@
 package com.voltek.newsfeed.presentation.ui.details
 
-import com.voltek.newsfeed.presentation.base.BaseModel
+import com.voltek.newsfeed.presentation.base.BaseModelOld
 
-class DetailsModel(subscriber: (BaseModel) -> Unit) : BaseModel(subscriber) {
+class DetailsModel(subscriber: (BaseModelOld) -> Unit) : BaseModelOld(subscriber) {
 
     var articleLoaded = false
 

@@ -8,14 +8,14 @@ import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding2.support.v7.widget.RxToolbar
 import com.voltek.newsfeed.App
 import com.voltek.newsfeed.R
-import com.voltek.newsfeed.presentation.base.BaseFragment
+import com.voltek.newsfeed.presentation.base.BaseFragmentOld
 import com.voltek.newsfeed.presentation.base.Event
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 import kotlinx.android.synthetic.main.fragment_details.*
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
-class DetailsFragment : BaseFragment(),
+class DetailsFragment : BaseFragmentOld(),
         DetailsView {
 
     companion object {

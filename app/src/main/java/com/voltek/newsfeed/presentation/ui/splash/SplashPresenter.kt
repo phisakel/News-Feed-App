@@ -4,7 +4,7 @@ import com.arellomobile.mvp.InjectViewState
 import com.voltek.newsfeed.domain.exception.NoNewsSourcesSelectedException
 import com.voltek.newsfeed.domain.usecase.Parameter
 import com.voltek.newsfeed.domain.usecase.newssources.NewsSourcesUseCase
-import com.voltek.newsfeed.presentation.base.BasePresenter
+import com.voltek.newsfeed.presentation.base.BasePresenterOld
 import com.voltek.newsfeed.presentation.base.Event
 import com.voltek.newsfeed.presentation.entity.SourceUI
 import com.voltek.newsfeed.presentation.navigation.command.CommandOpenArticlesListScreen
@@ -18,7 +18,7 @@ import io.reactivex.functions.Consumer
 class SplashPresenter(
         private val router: RouterOld,
         private val newsSources: NewsSourcesUseCase
-) : BasePresenter<SplashView>() {
+) : BasePresenterOld<SplashView>() {
 
     override fun event(event: Event) {}
 

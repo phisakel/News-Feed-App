@@ -4,7 +4,7 @@ import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 
-interface BaseView : MvpView {
+interface BaseViewOld : MvpView {
 
     /**
      * Subscribe to view input events in presenter's attachView method

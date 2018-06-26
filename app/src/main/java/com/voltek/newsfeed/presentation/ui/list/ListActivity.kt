@@ -2,7 +2,7 @@ package com.voltek.newsfeed.presentation.ui.list
 
 import android.content.Intent
 import com.voltek.newsfeed.R
-import com.voltek.newsfeed.presentation.base.BaseActivity
+import com.voltek.newsfeed.presentation.base.BaseActivityOld
 import com.voltek.newsfeed.presentation.entity.ArticleUI
 import com.voltek.newsfeed.presentation.navigation.command.*
 import com.voltek.newsfeed.presentation.navigation.proxy.CommandOld
@@ -10,7 +10,7 @@ import com.voltek.newsfeed.presentation.ui.details.DetailsFragment
 import com.voltek.newsfeed.presentation.ui.newssources.NewsSourcesActivity
 import kotlinx.android.synthetic.main.activity_list.*
 
-class ListActivity : BaseActivity() {
+class ListActivity : BaseActivityOld() {
 
     private var mDualPane = false
 

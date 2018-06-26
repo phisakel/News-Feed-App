@@ -9,7 +9,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.jakewharton.rxbinding2.support.v7.widget.RxToolbar
 import com.voltek.newsfeed.App
 import com.voltek.newsfeed.R
-import com.voltek.newsfeed.presentation.base.BaseFragment
+import com.voltek.newsfeed.presentation.base.BaseFragmentOld
 import com.voltek.newsfeed.presentation.base.Event
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import jp.wasabeef.recyclerview.animators.ScaleInLeftAnimator
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
-class NewsSourcesFragment : BaseFragment(),
+class NewsSourcesFragment : BaseFragmentOld(),
         NewsSourcesView {
 
     companion object {
