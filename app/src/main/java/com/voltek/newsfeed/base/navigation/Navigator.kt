@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.common.presentation.navigation
+package com.voltek.newsfeed.base.navigation
 
 interface Navigator {
 

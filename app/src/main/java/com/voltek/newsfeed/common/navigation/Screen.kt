@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.common.presentation
+package com.voltek.newsfeed.common.navigation
 
 enum class Screen {
     ArticlesFeed,

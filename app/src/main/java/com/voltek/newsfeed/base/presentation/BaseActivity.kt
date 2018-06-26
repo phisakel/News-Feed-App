@@ -1,10 +1,10 @@
-package com.voltek.newsfeed.common.presentation.base
+package com.voltek.newsfeed.base.presentation
 
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import com.arellomobile.mvp.MvpAppCompatActivity
-import com.voltek.newsfeed.common.presentation.navigation.Navigator
-import com.voltek.newsfeed.common.presentation.navigation.NavigatorHolder
+import com.voltek.newsfeed.base.navigation.Navigator
+import com.voltek.newsfeed.base.navigation.NavigatorHolder
 
 abstract class BaseActivity : MvpAppCompatActivity(), LayoutController, Injectable {
 

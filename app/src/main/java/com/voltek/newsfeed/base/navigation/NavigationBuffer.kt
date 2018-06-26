@@ -1,8 +1,8 @@
-package com.voltek.newsfeed.common.presentation.navigation
+package com.voltek.newsfeed.base.navigation
 
 import java.util.*
 
-class NavigationBuffer : NavigatorHolder {
+class NavigationBuffer : NavigatorHolder, Router {
 
     private var navigator: Navigator? = null
     private val commandsQueue = LinkedList<Array<out Command>>()
@@ -10,9 +10,8 @@ class NavigationBuffer : NavigatorHolder {
     override fun setNavigator(navigator: Navigator) {
         this.navigator = navigator
 
-
         while (commandsQueue.isNotEmpty()) {
-            executeCommands(*commandsQueue.poll())
+            execute(*commandsQueue.poll())
         }
     }
 
@@ -20,7 +19,7 @@ class NavigationBuffer : NavigatorHolder {
         navigator = null
     }
 
-    fun executeCommands(vararg commands: Command) {
+    override fun execute(vararg commands: Command) {
         navigator?.executeCommands(*commands) ?: commandsQueue.add(commands)
     }
 }

@@ -1,4 +1,4 @@
-package com.voltek.newsfeed.common.presentation.base
+package com.voltek.newsfeed.base.presentation
 
 import android.support.annotation.LayoutRes
 
