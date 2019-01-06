@@ -13,7 +13,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
             // Android
             '**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*',
             // Dagger 2
-            'com.voltek.newsfeed.dagger/**',
+            'gr.phisakel.newsfeed.dagger/**',
             '**/Dagger*.*',
             '**/*Module*.*',
             '**/*Component*.*',
