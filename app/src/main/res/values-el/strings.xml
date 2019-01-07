@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- App title -->
+    <string name="app_name">Νέα της ημέρας</string>
+
+    <!-- Activity titles -->
+    <string name="title_list">Νέα της ημέρας</string>
+
+    <!-- Toolbar actions -->
+    <string name="action_news_sources">Πηγές</string>
+    <string name="action_filter">Φίλτρο</string>
+    <string name="action_refresh">Ανανέωση</string>
+    <string name="action_share">Share</string>
+    <string name="action_website">Website</string>
+
+    <!-- News sources categories -->
+    <string name="category_all">Όλα</string>
+    <string name="category_enabled">Ενεργή</string>
+    <string name="category_business">Επιχειρήσεις</string>
+    <string name="category_entertainment">Διασκέδαση</string>
+    <string name="category_gaming">Παιχνίδια</string>
+    <string name="category_general">Γενικά</string>
+    <string name="category_music">Μουσική</string>
+    <string name="category_politics">Πολιτική</string>
+    <string name="category_science_and_nature">Επιστήμη</string>
+    <string name="category_sport">Σπορ</string>
+    <string name="category_technology">Τεχνολογία</string>
+
+    <!-- Errors -->
+    <string name="error_common">Κάτι πήγε στραβά</string>
+
+    <string name="error_no_connection">Δεν υπάρχει σύνδεση στο internet</string>
+    <string name="error_request_failed">Ο διακομιστής δεν ανταποκρίνεται</string>
+    <string name="error_retrieve_failed">Failed to retrieve news from\u0020</string>
+    <string name="error_empty_details">Συνέβη σφάλμα στη φόρτωση των λεπτομεριών</string>
+    <string name="error_no_browser">Δεν έχετε browser εγκατεστημένο</string>
+
+    <string name="error_no_news_sources_selected">Επιλέξτε τουλάχιστον μια πηγή νέων</string>
+    <string name="error_no_news_sources_selected_yet">Δεν έχετε επιλέξει πηγές ακόμα</string>
+    <string name="error_no_news_sources_for_category">Δεν υπάρχουν πηγές για την κατηγορία</string>
+    <string name="error_no_news_sources_loaded">Συνέβη σφάλμα στη φόρτωση νέων πηγών</string>
+
+</resources>
