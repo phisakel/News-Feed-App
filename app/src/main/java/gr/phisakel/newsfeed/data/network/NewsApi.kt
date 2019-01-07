@@ -13,6 +13,11 @@ interface NewsApi {
             @Query(PARAM_SOURCE) source: String
     ): Single<NewsApiArticlesResponse>
 
+    @GET(ENDPOINT_ARTICLES)
+    fun fetchCountryLatest(
+            @Query(COUNTRY_SOURCE) countryCode: String
+    ): Single<NewsApiArticlesResponse>
+
     @GET(ENDPOINT_SOURCES)
     fun fetchSources(): Single<NewsApiSourcesResponse>
 }

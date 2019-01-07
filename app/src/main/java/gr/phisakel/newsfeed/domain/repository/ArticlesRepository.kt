@@ -18,8 +18,10 @@ class ArticlesRepository(private val api: NewsApi, private val res: ResourcesMan
 
         if (!sources.isEmpty()) {
             for (source in sources) {
-                api.fetchArticles(source.id)
-                        .subscribe({
+                val articles = if(source.id.contains("_country_") == false)
+                    api.fetchArticles(source.id)
+                    else api.fetchCountryLatest(source.country)
+                articles.subscribe({
                             val result = ArrayList<ArticleUI>()
                             val sourceTitle = ArticleUI()
                             result.add(sourceTitle)

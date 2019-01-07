@@ -35,10 +35,10 @@ class NewsSourcesRepository(
         if (sourcesCache.isEmpty()) {
             api.fetchSources()
                     .map { it.sources }
-                    .map { it.map { Mapper.sourceAPItoDB(it) } }
                     .subscribe({
-                        storage.save(it)
-                        emitter.onNext(Result(storage.queryAll().map { Mapper.sourceDBtoUI(it) }))
+                        val all = getDBSourcesList(it)
+                        storage.save(all)
+                        emitter.onNext(Result(getUISourcesList(all)))
                     }, {
                         val message: String = when (it) {
                             is NoConnectionException -> res.getString(R.string.error_no_connection)
@@ -47,10 +47,31 @@ class NewsSourcesRepository(
                         emitter.onNext(Result(null, message))
                     })
         } else {
-            emitter.onNext(Result(sourcesCache.map { Mapper.sourceDBtoUI(it) }))
+            emitter.onNext(Result(getUISourcesList(sourcesCache)))
         }
 
         emitter.onComplete()
+    }
+
+    private fun getDBSourcesList(sourcesCache: List<SourceAPI>): ArrayList<SourceDB> {
+        var data = ArrayList<SourceDB>()
+        val element = SourceDB()
+        data.add(element)
+        element.id= "${res.currentCountryIsoCode}_country_general"
+        element.name = res.currentCountryDisplay
+        element.description= res.currentCountryDisplay
+        element.category= "general"
+        element.country = res.currentCountryIsoCode
+        element.isEnabled = true
+        data.addAll(sourcesCache.map { Mapper.sourceAPItoDB((it)) })
+        return data
+    }
+
+    private fun getUISourcesList(sourcesCache: List<SourceDB>): ArrayList<SourceUI> {
+        var data = ArrayList<SourceUI>()
+        // data.add(SourceUI("", res.currentCountryDisplay, res.currentCountryDisplay, "", "general", res.currentCountryIsoCode, true))
+        data.addAll(sourcesCache.map { Mapper.sourceDBtoUI((it)) })
+        return data
     }
 
     fun getCategory(category: String): Single<Result<List<SourceUI>?>> = Single.create {
