@@ -15,7 +15,8 @@ interface NewsApi {
 
     @GET(ENDPOINT_ARTICLES)
     fun fetchCountryLatest(
-            @Query(COUNTRY_SOURCE) countryCode: String
+            @Query(COUNTRY_SOURCE) countryCode: String,
+            @Query(COUNTRY_CATEGORY) category: String
     ): Single<NewsApiArticlesResponse>
 
     @GET(ENDPOINT_SOURCES)

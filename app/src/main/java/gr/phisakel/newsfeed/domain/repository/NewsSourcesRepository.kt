@@ -55,14 +55,18 @@ class NewsSourcesRepository(
 
     private fun getDBSourcesList(sourcesCache: List<SourceAPI>): ArrayList<SourceDB> {
         var data = ArrayList<SourceDB>()
-        val element = SourceDB()
-        data.add(element)
-        element.id= "${res.currentCountryIsoCode}_country_general"
-        element.name = res.currentCountryDisplay
-        element.description= res.currentCountryDisplay
-        element.category= "general"
-        element.country = res.currentCountryIsoCode
-        element.isEnabled = true
+        val catIDs = arrayOf(R.string.category_general,R.string.category_business, R.string.category_entertainment, R.string.category_health, R.string.category_science,
+                R.string.category_sport, R.string.category_technology)
+        for (catIndex in catIDs.indices) {
+            val element = SourceDB()
+            element.name = res.currentCountryDisplay
+            element.category = res.getStringEn(catIDs[catIndex])
+            element.description = res.getString(catIDs[catIndex])
+            element.id = "${res.currentCountryIsoCode}_country_${element.category}"
+            element.country = res.currentCountryIsoCode
+            element.isEnabled = catIndex == 0
+            data.add(element)
+        }
         data.addAll(sourcesCache.map { Mapper.sourceAPItoDB((it)) })
         return data
     }

@@ -20,13 +20,13 @@ class ArticlesRepository(private val api: NewsApi, private val res: ResourcesMan
             for (source in sources) {
                 val articles = if(source.id.contains("_country_") == false)
                     api.fetchArticles(source.id)
-                    else api.fetchCountryLatest(source.country)
+                    else api.fetchCountryLatest(source.country, source.category)
                 articles.subscribe({
                             val result = ArrayList<ArticleUI>()
                             val sourceTitle = ArticleUI()
                             result.add(sourceTitle)
                             result.addAll(it.articles.map { Mapper.articleAPItoUI(it) })
-                            result.forEach { article -> article.source = source.name }
+                            result.forEach { article -> article.source = "${source.name} / ${source.description}" }
                             emitter.onNext(Result(result))
                         }, {
                             val message: String = when (it) {

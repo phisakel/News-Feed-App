@@ -43,7 +43,7 @@ class NewsSourcesAdapter(private val mContext: Context, private var mItems: Muta
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mItems[position]
 
-        RxView.clicks(holder!!.itemView).subscribe({
+        RxView.clicks(holder.itemView).subscribe({
             holder.enabled.isChecked = !holder.enabled.isChecked
             mOnItemClickSubject.onNext(item)
         })
@@ -53,13 +53,14 @@ class NewsSourcesAdapter(private val mContext: Context, private var mItems: Muta
         holder.category.text = item.category
         holder.enabled.isChecked = item.isEnabled
 
-        when (item.country) {
+        when (item.country.toLowerCase()) {
             "au" -> loadImage(holder.country, R.drawable.ic_australia_24dp)
             "de" -> loadImage(holder.country, R.drawable.ic_germany_24dp)
             "gb" -> loadImage(holder.country, R.drawable.ic_united_kingdom_24dp)
             "in" -> loadImage(holder.country, R.drawable.ic_india_24dp)
             "it" -> loadImage(holder.country, R.drawable.ic_italy_24dp)
             "us" -> loadImage(holder.country, R.drawable.ic_united_states_24dp)
+            "gr" -> loadImage(holder.country, R.drawable.flag_of_greece_with_border)
         }
     }
 

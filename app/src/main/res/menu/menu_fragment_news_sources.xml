@@ -47,8 +47,11 @@
                     android:title="@string/category_politics" />
 
                 <item
-                    android:id="@+id/action_science_and_nature"
-                    android:title="@string/category_science_and_nature" />
+                    android:id="@+id/action_science"
+                    android:title="@string/category_science" />
+                <item
+                    android:id="@+id/action_health"
+                    android:title="@string/category_health" />
 
                 <item
                     android:id="@+id/action_sport"

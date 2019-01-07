@@ -32,7 +32,8 @@ class NewsSourcesFragment : BaseFragment(),
                 R.id.action_general,
                 R.id.action_music,
                 R.id.action_politics,
-                R.id.action_science_and_nature,
+                R.id.action_science,
+                R.id.action_health,
                 R.id.action_sport,
                 R.id.action_technology
         )
@@ -124,7 +125,8 @@ class NewsSourcesFragment : BaseFragment(),
             R.id.action_general -> setTitle(R.string.category_general)
             R.id.action_music -> setTitle(R.string.category_music)
             R.id.action_politics -> setTitle(R.string.category_politics)
-            R.id.action_science_and_nature -> setTitle(R.string.category_science_and_nature)
+            R.id.action_science -> setTitle(R.string.category_science)
+            R.id.action_health -> setTitle(R.string.category_health)
             R.id.action_sport -> setTitle(R.string.category_sport)
             R.id.action_technology -> setTitle(R.string.category_technology)
         }
