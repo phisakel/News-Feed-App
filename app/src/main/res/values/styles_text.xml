@@ -9,7 +9,7 @@
     <!-- Custom text styles -->
     <style name="Text.Subheading.Bold">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">24sp</item>
     </style>
 
