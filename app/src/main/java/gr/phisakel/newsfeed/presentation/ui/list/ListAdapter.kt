@@ -44,6 +44,7 @@ class ListAdapter(private val mContext: Context, private var mItems: MutableList
     class ViewHolderArticle(view: View) : RecyclerView.ViewHolder(view) {
         val image: ImageView = view.im_image
         val title: TextView = view.tv_title
+        val overlay: TextView = view.tv_overlay
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -107,6 +108,7 @@ class ListAdapter(private val mContext: Context, private var mItems: MutableList
                 .into(holder.image)
 
         holder.title.text = item.title
+        holder.overlay.text = "\n\n\n"
     }
 
     override fun getItemCount(): Int = mItems.size

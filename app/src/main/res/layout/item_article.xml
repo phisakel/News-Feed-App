@@ -16,13 +16,34 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/tv_title"
-        style="@style/Text.Subheading.Bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="0"
+        android:id="@+id/tv_overlay"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:background="@color/md_grey800"
+        android:gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/im_image"
+        android:layout_alignRight="@id/im_image"
+        android:alpha="0.5"
+        android:layout_alignBottom="@id/im_image"
+        android:padding="@dimen/generic_padding_small" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/im_image"
+        android:layout_alignRight="@id/im_image"
         android:layout_alignBottom="@id/im_image"
         android:padding="@dimen/generic_padding_small" />
 

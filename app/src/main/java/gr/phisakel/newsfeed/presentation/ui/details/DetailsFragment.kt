@@ -12,6 +12,7 @@ import gr.phisakel.newsfeed.presentation.base.BaseFragment
 import gr.phisakel.newsfeed.presentation.base.Event
 import gr.phisakel.newsfeed.presentation.entity.ArticleUI
 import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.android.synthetic.main.item_article.*
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
@@ -86,15 +87,15 @@ class DetailsFragment : BaseFragment(),
             Glide
                     .with(context)
                     .load(model.urlToImage)
-                    .into(im_image)
+                    .into(im_image_details)
 
-            tv_title.text = model.title
+            tv_title_details.text = model.title
             tv_description.text = model.description
 
             tv_message.text = ""
         } else {
-            im_image.setImageResource(android.R.color.transparent)
-            tv_title.text = ""
+            im_image_details.setImageResource(android.R.color.transparent)
+            tv_title_details.text = ""
             tv_description.text = ""
 
             tv_message.text = getString(R.string.error_empty_details)
