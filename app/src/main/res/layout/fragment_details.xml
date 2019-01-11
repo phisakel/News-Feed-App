@@ -45,6 +45,15 @@
                 android:id="@+id/tv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_go_website"
+                android:padding="@dimen/generic_padding_small"
+                android:paddingTop="@dimen/generic_padding"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/design_default_color_primary"
+                android:text="@string/action_website"/>
 
         </LinearLayout>
 

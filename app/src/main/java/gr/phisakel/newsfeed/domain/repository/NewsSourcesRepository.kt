@@ -67,7 +67,8 @@ class NewsSourcesRepository(
             element.isEnabled = catIndex == 0
             data.add(element)
         }
-        data.addAll(sourcesCache.map { Mapper.sourceAPItoDB((it)) })
+        // avoid copy right issues ignore sources
+        //  data.addAll(sourcesCache.map { Mapper.sourceAPItoDB((it)) })
         return data
     }
 

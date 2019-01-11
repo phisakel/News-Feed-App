@@ -6,6 +6,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding2.support.v7.widget.RxToolbar
+import com.jakewharton.rxbinding2.view.RxView
 import gr.phisakel.newsfeed.App
 import gr.phisakel.newsfeed.R
 import gr.phisakel.newsfeed.presentation.base.BaseFragment
@@ -66,6 +67,7 @@ class DetailsFragment : BaseFragment(),
                     }
                 }
                 .bind()
+        RxView.clicks(btn_go_website).subscribe {presenter.event(Event.OpenWebsite())}.bind()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean = when (item?.itemId) {
