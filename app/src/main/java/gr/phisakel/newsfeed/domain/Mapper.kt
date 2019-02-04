@@ -25,6 +25,8 @@ object Mapper {
             url = item.url ?: ""
             category = item.category ?: ""
             country = item.country ?: ""
+            if(country.equals("cy", ignoreCase = true))
+            { country = "gr"}
             isEnabled = item.isEnabled ?: false
         }
         return source
@@ -37,7 +39,7 @@ object Mapper {
                     description = item.description,
                     url = item.url,
                     category = item.category,
-                    country = item.country,
+                    country = if(item.country.equals("cy", ignoreCase = true)) { "gr" } else { item.country},
                     isEnabled = item.isEnabled
             )
 }
